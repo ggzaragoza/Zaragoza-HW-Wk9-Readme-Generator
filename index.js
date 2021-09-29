@@ -1,15 +1,18 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// const licenses = require('./licenses');
-
-// licenses
+const licenses = require('./licenses.js');
 
 inquirer
     .prompt([
         {
             type: 'input',
-            message: 'Hello! This application will generate a README file for your new project. What is the title of your project?',
+            message: 'Hello! This application will generate a README file for your new project. Please enter your first and last name.',
+            name: 'fullname',
+        },
+        {
+            type: 'input',
+            message: 'What is the title of your project?',
             name: 'title',
         },
         {
@@ -59,23 +62,30 @@ inquirer
             name: 'email',
         }
     ])
-    // .then((data) => {
-    //     if (data.license === 'MIT') {
-            
-    //     }
-    // })
     .then((data) => {
         const filename = `${data.title.toLowerCase().split(' ').join('')}.md`;
+
+        // readmeContent(data);
+
+        // function licenseText() {
+        //     if (data.license === 'MIT') {
+        //         return licenses.licenseMIT;
+        //     } else {
+        //         return licenses.licenseISC;
+        //     }
+        // }
+
+        // licenseText;
 
         fs.writeFile(filename, readmeContent(data), (err) => 
             err ? console.error(err) : console.log('Success! A README for your new project has been created!'))
     })
 
-const readmeContent = ({title, description, installation, usage, tech, testing, contributing, license, author, email}) =>
-`# ${title}
+readmeContent = (data) =>
+`# ${data.title}
 
 ## Description
-${description}
+${data.description}
 
 ## Table of Contents
 - [Installation](#installation)
@@ -87,26 +97,28 @@ ${description}
 - [Questions](#questions)
 
 ## Installation
-${installation}
+${data.installation}
 
 ## Usage
-${usage}
+${data.usage}
 
 ## Technologies
-${tech}
+${data.tech}
 
 ## Testing
-${testing}
+${data.testing}
 
 ## Contributing
-${contributing}
+${data.contributing}
 
 ## License
-${license}
+Copyright ${data.fullname}
+
+${data.license}
 
 ## Contact
-For further information about this project, feel free to email me at ${email}.
-This project can be found at (github.com/${author}).`
+This project can be found at (github.com/${data.author}).
+For further information about this project, feel free to email me at ${data.email}.`
 ;
 
 
