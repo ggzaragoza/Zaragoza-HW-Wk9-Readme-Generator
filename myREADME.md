@@ -1,35 +1,35 @@
-# sample project
+# test again
 
-    ## Description
-    it does stuff
+## Description
+checking formatting inside temp literal
 
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Technologies](#technologies)
-    - [Testing](#testing)
-    - [Contributing](#contributing)
-    - [License](#license)
-    - [Questions](#questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Questions](#questions)
 
-    ## Installation
-    you tell me
+## Installation
+pushing to github
 
-    ## Usage
-    i already answered this
+## Usage
+will generate a readme
 
-    ## Technologies
-    css
+## Technologies
+JavaScript, npm
 
-    ## Testing
-    deployment
+## Testing
+using command line to enter input
 
-    ## Contributing
-    find the repo
+## Contributing
+go to that repo
 
-    ## License
-    MIT
+## License
+MIT
 
-    ## Contact
-    For further information about this project, feel free to email me at greg.g.zaragoza@gmail.com.
-    This project can be found at (github.com/ggzaragoza).
+## Contact
+For further information about this project, feel free to email me at greg.g.zaragoza@gmail.com.
+This project can be found at (github.com/ggzaragoxa).
