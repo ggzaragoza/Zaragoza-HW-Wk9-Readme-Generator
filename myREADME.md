@@ -1,35 +1,35 @@
 # sample project
 
-## Description
-it does stuff
+    ## Description
+    it does stuff
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies](#technologies)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Questions](#questions)
+    ## Table of Contents
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Technologies](#technologies)
+    - [Testing](#testing)
+    - [Contributing](#contributing)
+    - [License](#license)
+    - [Questions](#questions)
 
-## Installation
-you tell me
+    ## Installation
+    you tell me
 
-## Usage
-i already answered this
+    ## Usage
+    i already answered this
 
-## Technologies
-css
+    ## Technologies
+    css
 
-## Testing
-deployment
+    ## Testing
+    deployment
 
-## Contributing
-find the repo
+    ## Contributing
+    find the repo
 
-## License
-MIT
+    ## License
+    MIT
 
-## Contact
-For further information about this project, feel free to email me at greg.g.zaragoza@gmail.com.
-This project can be found at (github.com/ggzaragoza).
+    ## Contact
+    For further information about this project, feel free to email me at greg.g.zaragoza@gmail.com.
+    This project can be found at (github.com/ggzaragoza).
