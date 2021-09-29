@@ -1,6 +1,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+// const licenses = require('./licenses');
+
+// licenses
+
 inquirer
     .prompt([
         {
@@ -55,8 +59,15 @@ inquirer
             name: 'email',
         }
     ])
+    // .then((data) => {
+    //     if (data.license === 'MIT') {
+            
+    //     }
+    // })
     .then((data) => {
-        fs.writeFile('myREADME.md', readmeContent(data), (err) => 
+        const filename = `${data.title.toLowerCase().split(' ').join('')}.md`;
+
+        fs.writeFile(filename, readmeContent(data), (err) => 
             err ? console.error(err) : console.log('Success! A README for your new project has been created!'))
     })
 
