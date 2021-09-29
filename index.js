@@ -55,46 +55,48 @@ inquirer
             name: 'email',
         }
     ])
-    // .then((response) => {
-    //     fs.writeFile
+    .then((data) => {
+        fs.writeFile('myREADME.md', readmeContent(data), (err) => 
+            err ? console.error(err) : console.log('Success! A README for your new project has been created!'))
+    })
 
-    // })
+const readmeContent = ({title, description, installation, usage, tech, testing, contributing, license, author, email}) =>
+    `# ${title}
 
-    const readmeContent = ({title, description, installation, usage, tech, testing, contributing, license, author, email}) =>
-        `# ${title}
+    ## Description
+    ${description}
 
-        ## Description
-        ${description}
+    ## Table of Contents
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Technologies](#technologies)
+    - [Testing](#testing)
+    - [Contributing](#contributing)
+    - [License](#license)
+    - [Questions](#questions)
+    
+    ## Installation
+    ${installation}
+    
+    ## Usage
+    ${usage}
+    
+    ## Technologies
+    ${tech}
+    
+    ## Testing
+    ${testing}
+    
+    ## Contributing
+    ${contributing}
+    
+    ## License
+    ${license}
+    
+    ## Contact
+    For further information about this project, feel free to email me at ${email}.
+    This project can be found at (github.com/${author}).`
+;
 
-        ## Table of Contents
-        - [Installation](#installation)
-        - [Usage](#usage)
-        - [Technologies](#technologies)
-        - [Testing](#testing)
-        - [Contributing](#contributing)
-        - [License](#license)
-        - [Questions](#questions)
-        
-        ## Installation
-        ${installation}
-        
-        ## Usage
-        ${usage}
-        
-        ## Technologies
-        ${tech}
-        
-        ## Testing
-        ${testing}
-        
-        ## Contributing
-        ${contributing}
-        
-        ## License
-        ${license}
-        
-        ## Contact
-        For further information about this project, feel free to email me at ${email}.
-        This project can be found at (github.com/${author}).`
-    ;
+
     
