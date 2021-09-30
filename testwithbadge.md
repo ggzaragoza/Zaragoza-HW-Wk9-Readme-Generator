@@ -1,10 +1,24 @@
 
-# Second README Test
+# Test with Badge
 ## Description
 asdf
+
+![MIT License](/badges/license-MIT-red.svg)
 ## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributions](#contributions)
 - [License](#license)
 - [Contact](#contact)
+## Installation
+1
+## Usage
+2
+## Testing
+3
+## Contributions
+4
 ## License
 © 2021 Greg Zaragoza
 

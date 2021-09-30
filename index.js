@@ -126,12 +126,20 @@ tableofCont += `
 - [Contact](#contact)`;
 
 
+let badge = ``;
+
+if (data.license === 'MIT') { badge += `
+![MIT License](/badges/license-MIT-red.svg)`
+}
+
+
 let content = `
 # ${data.title}`;
 
 content += `
 ## Description
-${data.description}`;
+${data.description}
+${badge}`;
 
 content += tableofCont;
 
