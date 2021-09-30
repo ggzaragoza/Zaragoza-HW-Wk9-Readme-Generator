@@ -1,9 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-
-const licenses = require('./licenses.js');
-
 const moment = require('moment');
+
 const copyrightYear = moment().format('YYYY');
 
 inquirer
@@ -130,7 +128,16 @@ let badge = ``;
 
 if (data.license === 'MIT') { badge += `
 ![MIT License](/badges/license-MIT-red.svg)`
-}
+};
+if (data.license === 'ISC') { badge += `
+![MIT License](/badges/license-ISC-blue.svg)`
+};
+if (data.license === 'Apache 2.0') { badge += `
+![MIT License](/badges/https-//img.shields.io/badge/license-Apache%202.0-orange.svg)`
+};
+if (data.license === 'BSD 3-Clause') { badge += `
+![MIT License](/badges/https-//img.shields.io/badge/license-BSD%203--Clause-green.svg)`
+};
 
 
 let content = `
