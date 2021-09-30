@@ -3,94 +3,120 @@ const inquirer = require('inquirer');
 
 const licenses = require('./licenses.js');
 
+const moment = require('moment');
+const copyrightYear = moment().format('YYYY');
+
 inquirer
     .prompt([
         {
             type: 'input',
-            message: 'Hello! This application will generate a README file for your new project. Please enter your first and last name.',
+            message: 'Hello! This application will generate a README file for your new project. As author, please enter your first and last name.',
             name: 'fullname',
         },
         {
             type: 'input',
-            message: 'What is the title of your project?',
+            message: 'What is the title of your project? (required)',
             name: 'title',
+            validate: (input) => {
+                if (input === '') {
+                    return console.log("Please enter a title for your new project.")
+                } else {
+                    return true;
+                }
+            }
         },
         {
             type: 'input',
-            message: 'Describe your new project.',
+            message: "Describe your new project. What is your project's purpose and how does it work? (required)",
             name: 'description',
+            validate: (input) => {
+                if (input === '') {
+                    return console.log("A description of your project is required for this README.")
+                } else {
+                    return true;
+                }
+            }
         },
         {
             type: 'input',
-            message: 'How will you install your project?',
+            message: 'Describe the installation process for your project. (optional)',
             name: 'installation',
         },
         {
             type: 'input',
-            message: 'How will your project function?',
+            message: 'Describe how a user should utilize or interact with your project. (optional)',
             name: 'usage',
         },
         {
             type: 'input',
-            message: 'Which technologies will your project use?',
-            name: 'tech',
-        },
-        {
-            type: 'input',
-            message: 'How will your project be tested?',
+            message: 'How was/can your project be tested? (optional)',
             name: 'testing',
         },
         {
             type: 'input',
-            message: 'How can someone contribute to this project?',
+            message: 'How can users or other developers contribute to this project? (optional)',
             name: 'contributing',
         },
         {
             type: 'list',
             message: 'Under which license will your project be covered?',
             name: 'license',
-            choices: ['MIT', 'ISC'],
+            choices: ['MIT', 'ISC', 'Apache 2.0', 'BSD 3-Clause'],
         },
         {
             type: 'input',
-            message: 'Please enter your GitHub username.',
+            message: 'Please enter your GitHub username. (required)',
             name: 'author',
+            validate: (input) => {
+                if (input === '') {
+                    return console.log("Please provide your GitHub username as author of this README.")
+                } else {
+                    return true;
+                }
+            }
         },
         {
             type: 'input',
-            message: 'Please provide a good email address where you can be reached for additional questions about your new project.',
+            message: 'Please provide an email address where you can be reached for additional questions about your new project. (required)',
             name: 'email',
+            validate: (input) => {
+                if (input === '') {
+                    return console.log("An email address for contact purposes is required to finish this README.")
+                } else {
+                    return true;
+                }
+            }
         }
     ])
     .then((data) => {
         const filename = `${data.title.toLowerCase().split(' ').join('')}.md`;
 
-        // readmeContent(data);
-
-        // function licenseText() {
-        //     if (data.license === 'MIT') {
-        //         return licenses.licenseMIT;
-        //     } else {
-        //         return licenses.licenseISC;
-        //     }
-        // }
-
-        // licenseText;
-
         fs.writeFile(filename, readmeContent(data), (err) => 
-            err ? console.error(err) : console.log('Success! A README for your new project has been created!'))
+            err ? console.error(err) : console.log('Success! A README for your new project has been created.'))
     })
 
+
+// function licenseforReadme() {
+//     if (inquirer.prompt.license === 'MIT') {
+//         return licenses.licenseMIT;
+//     } else {
+//         return licenses.licenseISC;
+//     }
+// };
+
+
 readmeContent = (data) =>
+
 `# ${data.title}
 
 ## Description
 ${data.description}
 
+[!License]
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Technologies](#technologies)
 - [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)
@@ -102,9 +128,6 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-## Technologies
-${data.tech}
-
 ## Testing
 ${data.testing}
 
@@ -112,9 +135,9 @@ ${data.testing}
 ${data.contributing}
 
 ## License
-Copyright ${data.fullname}
+\u00A9 ${copyrightYear} ${data.fullname}
 
-${data.license}
+This project is protected under the ${data.license} license. For more information, please visit (opensource.org/licenses).
 
 ## Contact
 This project can be found at (github.com/${data.author}).

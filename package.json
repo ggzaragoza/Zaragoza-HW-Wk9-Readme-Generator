@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ggzaragoza/Zaragoza-HW-Wk9-Readme-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.1.5"
+    "inquirer": "^8.1.5",
+    "moment": "^2.29.1"
   }
 }
