@@ -105,44 +105,109 @@ inquirer
 // };
 
 
-readmeContent = (data) =>
+readmeContent = (data) => {
+let tableofCont = `
+## Table of Contents`;
 
-`# ${data.title}
-
-## Description
-${data.description}
-
-[!License]
-
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
+if (data.installation !== ``) { tableofCont += `
+- [Installation](#installation)`;
+}
+if (data.usage !== ``) { tableofCont += `
+- [Usage](#usage)`;
+}
+if (data.testing !== ``) { tableofCont += `
+- [Testing](#testing)`;
+}
+if (data.contributing !== ``) { tableofCont += `
+- [Contributions](#contributions)`;
+}
+tableofCont += `
 - [License](#license)
-- [Questions](#questions)
+- [Contact](#contact)`;
 
+
+let content = `
+# ${data.title}`;
+
+content += `
+## Description
+${data.description}`;
+
+content += tableofCont;
+
+if (data.installation !== ``) { content += `
 ## Installation
-${data.installation}
-
+${data.installation}`;
+}
+if (data.usage !== ``) { content += `
 ## Usage
-${data.usage}
-
+${data.usage}`;
+}
+if (data.testing !== ``) { content += `
 ## Testing
-${data.testing}
+${data.testing}`;
+}
+if (data.contributing !== ``) { content += `
+## Contributions
+${data.contributing}`;
+}
 
-## Contributing
-${data.contributing}
-
+content += `
 ## License
-\u00A9 ${copyrightYear} ${data.fullname}
-
-This project is protected under the ${data.license} license. For more information, please visit (opensource.org/licenses).
+\u00A9 ${copyrightYear} ${data.fullname}\n
+This project is protected under the ${data.license} license. For more information, please visit [https://opensource.org/licenses](https://opensource.org/licenses).
 
 ## Contact
-This project can be found at (github.com/${data.author}).
-For further information about this project, feel free to email me at ${data.email}.`
-;
+This project was created by ${data.fullname} and can be found at [https://github.com/${data.author}](https://github.com/${data.author}).\n
+For further information, feel free to email the author at ${data.email} with any questions about the project or regarding future updates or other issues.`;
 
+return content;
+}
 
+    // content += `
+    // ## License
+    // \u00A9 ${copyrightYear} ${data.fullname}\n\n
+
+    // This project is protected under the ${data.license} license. For more information, please visit [https://opensource.org/licenses](https://opensource.org/licenses).
     
+    // ## Contact
+    // This project was created by ${data.fullname} and can be found at [https://github.com/${data.author}](https://github.com/${data.author}).\n\n
+    // For further information, feel free to email the author at ${data.email} with any questions about the project or regarding future updates or other issues.`;
+
+    // let tableofCont = `## Table of Contents`
+
+// `# ${data.title}
+
+// ## Description
+// ${data.description}
+
+// `[!License]
+
+// ## Table of Contents
+// - [Installation](#installation)
+// - [Usage](#usage)
+// - [Testing](#testing)
+// - [Contributing](#contributing)
+// - [License](#license)
+// - [Contact](#contact)
+
+// ## Installation
+// ${data.installation}
+
+// ## Usage
+// ${data.usage}
+
+// ## Testing
+// ${data.testing}
+
+// ## Contributing
+// ${data.contributing}
+
+// ## License
+// \u00A9 ${copyrightYear} ${data.fullname}
+
+// This project is protected under the ${data.license} license. For more information, please visit [https://opensource.org/licenses](https://opensource.org/licenses).
+
+// ## Contact
+// This project was created by ${data.fullname} and can be found at [https://github.com/${data.author}](https://github.com/${data.author}).\n\n
+// For further information, feel free to email the author at ${data.email} with any questions about the project or regarding future updates or other issues.`};
