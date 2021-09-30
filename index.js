@@ -4,6 +4,7 @@ const moment = require('moment');
 
 const copyrightYear = moment().format('YYYY');
 
+
 inquirer
     .prompt([
         {
@@ -91,16 +92,7 @@ inquirer
 
         fs.writeFile(filename, readmeContent(data), (err) => 
             err ? console.error(err) : console.log('Success! A README for your new project has been created.'))
-    })
-
-
-// function licenseforReadme() {
-//     if (inquirer.prompt.license === 'MIT') {
-//         return licenses.licenseMIT;
-//     } else {
-//         return licenses.licenseISC;
-//     }
-// };
+    });
 
 
 readmeContent = (data) => {
@@ -177,52 +169,4 @@ This project was created by ${data.fullname} and can be found at [https://github
 For further information, feel free to email the author at ${data.email} with any questions about the project or regarding future updates or other issues.`;
 
 return content;
-}
-
-    // content += `
-    // ## License
-    // \u00A9 ${copyrightYear} ${data.fullname}\n\n
-
-    // This project is protected under the ${data.license} license. For more information, please visit [https://opensource.org/licenses](https://opensource.org/licenses).
-    
-    // ## Contact
-    // This project was created by ${data.fullname} and can be found at [https://github.com/${data.author}](https://github.com/${data.author}).\n\n
-    // For further information, feel free to email the author at ${data.email} with any questions about the project or regarding future updates or other issues.`;
-
-    // let tableofCont = `## Table of Contents`
-
-// `# ${data.title}
-
-// ## Description
-// ${data.description}
-
-// `[!License]
-
-// ## Table of Contents
-// - [Installation](#installation)
-// - [Usage](#usage)
-// - [Testing](#testing)
-// - [Contributing](#contributing)
-// - [License](#license)
-// - [Contact](#contact)
-
-// ## Installation
-// ${data.installation}
-
-// ## Usage
-// ${data.usage}
-
-// ## Testing
-// ${data.testing}
-
-// ## Contributing
-// ${data.contributing}
-
-// ## License
-// \u00A9 ${copyrightYear} ${data.fullname}
-
-// This project is protected under the ${data.license} license. For more information, please visit [https://opensource.org/licenses](https://opensource.org/licenses).
-
-// ## Contact
-// This project was created by ${data.fullname} and can be found at [https://github.com/${data.author}](https://github.com/${data.author}).\n\n
-// For further information, feel free to email the author at ${data.email} with any questions about the project or regarding future updates or other issues.`};
+};
