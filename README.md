@@ -14,6 +14,8 @@ In this repository you will find script for a README generator that receives use
 The application may be forked from this repository. Once inside the folder on your local computer, run the NPM install and then install the 'inquirer' and 'moment' packages for this application to run.
 ## Usage
 This application will ask for your name, GitHub username, and email address as a means to provide ownership of your README and/or project, and also as a means of added contact information to your .md file. Prompts will display whether certain questions can remain unanswered depending on the details of your project.
+
+Demonstration video: <a href="https://watch.screencastify.com/v/CcmXxyNcB25NsrmqCJuO">https://watch.screencastify.com/v/CcmXxyNcB25NsrmqCJuO</a>
 ## Contributions
 Users are welcome to download or fork/clone this repository and add improvements or updates. Feel free to reach out below as well!
 ## License
